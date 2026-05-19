@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9361d975a82b9f469eb47c269fb4af5, type: 3}
-  m_Name: Movie
-  m_EditorClassIdentifier: Assembly-CSharp::BaseEntity
-  ID: 123
-  EntityName: Movie
+  m_Name: EPIKo
+  m_EditorClassIdentifier: Assembly-CSharp::BaseEntityData
+  ID: 150
+  EntityName: EPIKo
   prefab: {fileID: 6488280063319891443, guid: 640a12d90b2a9e44993af143b87015c1, type: 3}
-  Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  Description: asdasdasd
+  Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Description: qwertyuiop

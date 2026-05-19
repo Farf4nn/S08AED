@@ -172,6 +172,42 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpawnCommon"",
+                    ""type"": ""Button"",
+                    ""id"": ""b66cb963-d4c8-4ea3-9658-f1fd108cc0cc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpawnRare"",
+                    ""type"": ""Button"",
+                    ""id"": ""d79b7b85-4416-4374-a259-683fc40d6cc6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpawnEpic"",
+                    ""type"": ""Button"",
+                    ""id"": ""5cd9fc2c-39d9-4a8b-a1fa-9edc9b63c083"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpawnLegendary"",
+                    ""type"": ""Button"",
+                    ""id"": ""5e5e47ae-14dc-4226-a3bc-8dced4d982db"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -557,6 +593,50 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""989c3727-b395-4dc0-8e4a-51679dfa301e"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnCommon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c7dd47d-8948-491d-8eff-4e61c4efbdab"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnRare"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e061104f-dea6-45ff-acc6-8a86f34b9187"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnEpic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ef4a859-5a81-4eac-a7f4-81c0192559f4"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnLegendary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1184,6 +1264,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_SpawnCommon = m_Player.FindAction("SpawnCommon", throwIfNotFound: true);
+        m_Player_SpawnRare = m_Player.FindAction("SpawnRare", throwIfNotFound: true);
+        m_Player_SpawnEpic = m_Player.FindAction("SpawnEpic", throwIfNotFound: true);
+        m_Player_SpawnLegendary = m_Player.FindAction("SpawnLegendary", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1287,6 +1371,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Previous;
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_SpawnCommon;
+    private readonly InputAction m_Player_SpawnRare;
+    private readonly InputAction m_Player_SpawnEpic;
+    private readonly InputAction m_Player_SpawnLegendary;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1334,6 +1422,22 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Sprint".
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SpawnCommon".
+        /// </summary>
+        public InputAction @SpawnCommon => m_Wrapper.m_Player_SpawnCommon;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SpawnRare".
+        /// </summary>
+        public InputAction @SpawnRare => m_Wrapper.m_Player_SpawnRare;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SpawnEpic".
+        /// </summary>
+        public InputAction @SpawnEpic => m_Wrapper.m_Player_SpawnEpic;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SpawnLegendary".
+        /// </summary>
+        public InputAction @SpawnLegendary => m_Wrapper.m_Player_SpawnLegendary;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1387,6 +1491,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @SpawnCommon.started += instance.OnSpawnCommon;
+            @SpawnCommon.performed += instance.OnSpawnCommon;
+            @SpawnCommon.canceled += instance.OnSpawnCommon;
+            @SpawnRare.started += instance.OnSpawnRare;
+            @SpawnRare.performed += instance.OnSpawnRare;
+            @SpawnRare.canceled += instance.OnSpawnRare;
+            @SpawnEpic.started += instance.OnSpawnEpic;
+            @SpawnEpic.performed += instance.OnSpawnEpic;
+            @SpawnEpic.canceled += instance.OnSpawnEpic;
+            @SpawnLegendary.started += instance.OnSpawnLegendary;
+            @SpawnLegendary.performed += instance.OnSpawnLegendary;
+            @SpawnLegendary.canceled += instance.OnSpawnLegendary;
         }
 
         /// <summary>
@@ -1425,6 +1541,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @SpawnCommon.started -= instance.OnSpawnCommon;
+            @SpawnCommon.performed -= instance.OnSpawnCommon;
+            @SpawnCommon.canceled -= instance.OnSpawnCommon;
+            @SpawnRare.started -= instance.OnSpawnRare;
+            @SpawnRare.performed -= instance.OnSpawnRare;
+            @SpawnRare.canceled -= instance.OnSpawnRare;
+            @SpawnEpic.started -= instance.OnSpawnEpic;
+            @SpawnEpic.performed -= instance.OnSpawnEpic;
+            @SpawnEpic.canceled -= instance.OnSpawnEpic;
+            @SpawnLegendary.started -= instance.OnSpawnLegendary;
+            @SpawnLegendary.performed -= instance.OnSpawnLegendary;
+            @SpawnLegendary.canceled -= instance.OnSpawnLegendary;
         }
 
         /// <summary>
@@ -1799,6 +1927,34 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SpawnCommon" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpawnCommon(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SpawnRare" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpawnRare(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SpawnEpic" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpawnEpic(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SpawnLegendary" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpawnLegendary(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
